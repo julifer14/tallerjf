@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ca">
+	<head>
+		<meta charset="utf-8">
+
+		<title>{% block title %} base {% endblock %}</title>
+		{% block estil %}
+		<style>
+			body {
+				background-color: #CCCCCC;
+			}
+		</style> {% endblock %}
+
+	</head>
+
+	<body>
+		{% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+			<li
+			{% if message.tags %} class="{{message.tags}}"{% endif %}>
+				{{ message }}
+			</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+
+		{% block content %}
+		patata
+		{% endblock %}
+	</body>
+</html>

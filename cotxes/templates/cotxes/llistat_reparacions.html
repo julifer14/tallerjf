@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Llistat reparacions{% endblock %}
+
+{% block content %}
+<h1>Llistat de reparacions</h1>
+
+<ul>
+	{% for r in reparacions %}
+	<li>
+		<a href="{% url 'cotxesns:edita_reparacio' r.id %}">{{ r.descripcioAvaria }}</a>
+		
+	</li>
+	{% endfor %}
+</ul>
+
+{% endblock %}

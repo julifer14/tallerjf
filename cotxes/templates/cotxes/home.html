@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+<h1>Benvinguts a la web de tallerjf </h1>
+<b>Llistat de les matricules dels cotxes que hi ha al taller</b>
+
+
+{% if cotxes %}
+<ul>
+	{% for cotxe in cotxes %}
+	<li>
+		{{ cotxe.matricula }}
+
+	</li>
+	{% endfor %}
+</ul>
+{% else %}
+<h2>No hi ha cotxes al taller</h2>
+{% endif %}
+<a href="{% url 'cotxesns:novaReparacio' %}">Afegir una nova reparació</a>
+<a href="{% url 'cotxesns:llistatReparacions' %}">Llistat de les reparacions realitzades</a>
+{% endblock %}
